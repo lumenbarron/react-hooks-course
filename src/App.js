@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 //import Counter from './components/counter';
-import Counter2 from "./components/counterState";
-import Form from "./components/Form";
-import DatePickerComp from "./components/datePickerComp";
-import Ejemplo1 from "./components/Ejemplo1";
-import MediaHeading from "./components/MediaHeading";
-import Crud from './components/Crud';
-import GetDataFirestore from './components/GetDataFirestore';
+// import Counter2 from "./components/counterState";
+// import Form from "./components/Form";
+// import DatePickerComp from "./components/datePickerComp";
+// import Ejemplo1 from "./components/Ejemplo1";
+// import MediaHeading from "./components/MediaHeading";
+// import Crud from './components/Crud';
+import GetDataFirestore from './components/CRUDFIRESTORE/GetDataFirestore';
 
 export default function App() {
   // const sujeto = {

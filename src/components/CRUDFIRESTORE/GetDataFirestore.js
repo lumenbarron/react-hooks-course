@@ -1,10 +1,10 @@
 import React, { Fragment, useState, useEffect } from "react";
-import { firebase } from "../firebase";
+import { firebase } from "../../firebase";
+import AddDataFirestore from './AddDataFirestore';
+import EditDataFirestore from './EditDataFirestore';
 
 const GetDataFirestore = () => {
   const [data, setData] = useState([]);
-  const [tarea, setTarea] = useState("");
-  const [fecha, setFecha] = useState("");
 
   useEffect(() => {
     console.log("useEfect");
@@ -27,36 +27,9 @@ const GetDataFirestore = () => {
   };
 
   const deleteData = (id) => {
-      console.log('eliminado');
-      firebase.firestore().collection('tareas').doc(id).delete()
-  }
-
-  //   const getData = async () => {
-  //     const db = firebase.firestore();
-  //     try {
-  //       const data = await db.collection("tareas").get();
-  //       const arrayData = data.docs.map((doc) => ({
-  //         id: doc.id,
-  //         ...doc.data(),
-  //       }));
-  //       console.log(arrayData);
-  //       setData(arrayData);
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   };
-
-  const addData = (e) => {
-    e.preventDefault();
-    firebase
-      .firestore()
-      .collection("tareas")
-      .add({
-        tarea,
-        fecha,
-      })
-      .then(() => setTarea(""), setFecha(""));
-  };
+    console.log('eliminado');
+    firebase.firestore().collection('tareas').doc(id).delete()
+}
 
   return (
     <Fragment>
@@ -80,24 +53,10 @@ const GetDataFirestore = () => {
               ))}
             </ul>
           </div>
-          <div className="col-md-6">formulario</div>
         </div>
       </div>
-      <form onSubmit={addData}>
-        <input
-          name="tarea"
-          type="text"
-          value={tarea}
-          onChange={(e) => setTarea(e.currentTarget.value)}
-        />
-        <input
-          name="fecha"
-          type="text"
-          value={fecha}
-          onChange={(e) => setFecha(e.currentTarget.value)}
-        />
-        <button>Submit</button>
-      </form>
+<AddDataFirestore />
+<EditDataFirestore />
     </Fragment>
   );
 };
