@@ -6,12 +6,14 @@ import DatePickerComp from "./components/datePickerComp";
 import Ejemplo1 from "./components/Ejemplo1";
 import MediaHeading from "./components/MediaHeading";
 import Crud from './components/Crud';
+import GetDataFirestore from './components/GetDataFirestore';
+
 export default function App() {
-  const sujeto = {
-    nombre: "lucy",
-    urlImage: "https://via.placeholder.com/64",
-    texto: "holaholaolahola",
-  };
+  // const sujeto = {
+  //   nombre: "lucy",
+  //   urlImage: "https://via.placeholder.com/64",
+  //   texto: "holaholaolahola",
+  // };
 
   return (
     <div className="App">
@@ -20,7 +22,8 @@ export default function App() {
       {/* <Ejemplo1 persona='lucy' edad={25} />
         <Ejemplo1 persona='mendez'/> */}
       {/* <MediaHeading sujeto={sujeto} /> */}
-      <Crud />
+      {/* <Crud /> */}
+      <GetDataFirestore />
     </div>
   );
 }
